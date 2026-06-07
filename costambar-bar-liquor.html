@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Costambar Bar & Liquor – Paterson, NJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dark: #8B6914;
+    --black: #0a0a0a;
+    --dark: #111111;
+    --dark2: #1a1a1a;
+    --dark3: #222222;
+    --white: #f5f0e8;
+    --orange: #D4631A;
+    --text-muted: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--gold-dark);
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--black);
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    font-size: 28px;
+  }
+
+  .nav-logo-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 26px;
+    color: var(--orange);
+    line-height: 1;
+  }
+
+  .nav-logo-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%230a0a0a" width="100" height="100"/></svg>');
+    background-size: cover;
+  }
+
+  /* Hero uses the exterior building photo (Image 1) as CSS bg */
+  .hero-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(10,10,10,0.92) 40%, rgba(10,10,10,0.55) 100%);
+    z-index: 1;
+  }
+
+  .hero-photo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(20%) contrast(1.05);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 620px;
+    padding: 0 80px;
+    animation: fadeInLeft 1s ease forwards;
+  }
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    display: inline-block;
+  }
+
+  .hero-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(52px, 7vw, 90px);
+    color: var(--orange);
+    line-height: 0.95;
+    margin-bottom: 4px;
+    text-shadow: 0 4px 30px rgba(212,99,26,0.4);
+  }
+
+  .hero-title-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 400;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 30px;
+    line-height: 1.1;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.75);
+    max-width: 460px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    padding: 15px 36px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 15px 36px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(245,240,232,0.4);
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-address {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    z-index: 2;
+    display: flex;
+    gap: 40px;
+    font-size: 12px;
+    color: rgba(245,240,232,0.5);
+    letter-spacing: 1px;
+  }
+
+  .hero-address span { color: var(--gold); font-weight: 600; }
+
+  /* DIVIDER */
+  .gold-divider {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+  }
+
+  /* ABOUT STRIP */
+  .about-strip {
+    background: var(--dark2);
+    padding: 80px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .about-photos img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+    filter: contrast(1.05);
+    transition: transform 0.4s;
+  }
+
+  .about-photos img:hover { transform: scale(1.03); }
+  .about-photos img:first-child { grid-column: 1/-1; height: 280px; }
+
+  .about-text .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 3.5vw, 48px);
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--white);
+  }
+
+  .about-text h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .about-text p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(245,240,232,0.7);
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+
+  .family-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 12px 20px;
+    border-radius: 2px;
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--gold);
+  }
+
+  /* FEATURES STRIP */
+  .features {
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.15);
+  }
+
+  .feature-item {
+    background: var(--dark);
+    padding: 40px 30px;
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .feature-item:hover { background: var(--dark2); }
+
+  .feature-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .feature-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .feature-item p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* GALLERY SECTION */
+  .gallery-section {
+    padding: 80px 80px;
+    background: var(--black);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header .eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    color: var(--white);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: all 0.4s;
+    cursor: pointer;
+    filter: brightness(0.85);
+  }
+
+  .gallery-grid img:hover {
+    filter: brightness(1);
+    transform: scale(1.02);
+    z-index: 2;
+    position: relative;
+  }
+
+  .gallery-grid img:nth-child(1) {
+    grid-column: 1 / 3;
+    height: 380px;
+  }
+
+  /* PRODUCTS / MENU */
+  .products-section {
+    padding: 80px 80px;
+    background: var(--dark2);
+  }
+
+  .products-section .section-header { margin-bottom: 40px; }
+
+  .category-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .tab-btn {
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: rgba(245,240,232,0.6);
+    padding: 9px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.25s;
+  }
+
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2px;
+  }
+
+  .product-card {
+    background: var(--dark3);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 2px solid transparent;
+    transition: all 0.25s;
+  }
+
+  .product-card:hover {
+    background: #2a2a2a;
+    border-left-color: var(--gold);
+  }
+
+  .product-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .product-cat {
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .product-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--gold);
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+
+  .hidden { display: none; }
+
+  /* HOURS / CONTACT */
+  .info-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--black);
+  }
+
+  .info-panel {
+    padding: 80px;
+  }
+
+  .info-panel:first-child {
+    border-right: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .info-panel .eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .info-panel h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 32px;
+    color: var(--white);
+  }
+
+  .hours-list {
+    list-style: none;
+  }
+
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    font-size: 14px;
+  }
+
+  .hours-list li .day { color: rgba(245,240,232,0.6); }
+  .hours-list li .time { color: var(--gold); font-weight: 600; }
+  .hours-list li.today { background: rgba(201,168,76,0.07); padding: 14px 10px; margin: 0 -10px; }
+  .hours-list li.today .day { color: var(--white); font-weight: 600; }
+
+  .contact-list {
+    list-style: none;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .contact-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .contact-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .contact-value { font-size: 15px; color: var(--white); text-decoration: none; }
+  .contact-value:hover { color: var(--gold); }
+
+  .social-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .social-btn {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--gold);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .social-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+  }
+
+  /* MAP EMBED */
+  .map-section {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .map-section iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(40%) contrast(1.1);
+  }
+
+  .map-overlay-card {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    background: rgba(10,10,10,0.92);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 28px 32px;
+    backdrop-filter: blur(8px);
+    max-width: 280px;
+    border-radius: 4px;
+  }
+
+  .map-overlay-card h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: var(--orange);
+    margin-bottom: 8px;
+  }
+
+  .map-overlay-card p {
+    font-size: 13px;
+    color: rgba(245,240,232,0.7);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding: 50px 80px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+  }
+
+  .footer-brand .logo-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: var(--orange);
+    line-height: 1;
+  }
+
+  .footer-brand .logo-sub {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .footer-brand p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 280px;
+    margin-bottom: 20px;
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.25s;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    background: var(--black);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  /* LIGHTBOX */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 36px;
+    color: var(--white);
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  /* AGE GATE */
+  .age-gate {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.98);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .age-gate.visible { display: flex; }
+
+  .age-gate .palm { font-size: 60px; margin-bottom: 20px; }
+
+  .age-gate h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .age-gate p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 32px;
+    max-width: 400px;
+  }
+
+  .age-gate-btns {
+    display: flex;
+    gap: 16px;
+  }
+
+  .age-no {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-muted);
+    padding: 14px 32px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .age-no:hover { border-color: #ff4444; color: #ff4444; }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 30px; }
+    .hero-photo { width: 100%; opacity: 0.25; }
+    .hero-address { left: 30px; gap: 20px; }
+    .about-strip { grid-template-columns: 1fr; padding: 50px 30px; gap: 40px; }
+    .features { grid-template-columns: 1fr 1fr; padding: 40px 30px; }
+    .gallery-section, .products-section { padding: 60px 30px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid img:nth-child(1) { grid-column: 1 / -1; }
+    .info-section { grid-template-columns: 1fr; }
+    .info-panel { padding: 50px 30px; }
+    .info-panel:first-child { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    footer { grid-template-columns: 1fr; padding: 40px 30px; gap: 30px; }
+    .footer-bottom { padding: 20px 30px; flex-direction: column; gap: 8px; }
+    .map-overlay-card { left: 20px; top: 20px; padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AGE GATE -->
+<div class="age-gate visible" id="ageGate">
+  <div class="palm">🌴</div>
+  <h2>Welcome to Costambar</h2>
+  <p>You must be 21 years of age or older to enter this site. Please verify your age.</p>
+  <div class="age-gate-btns">
+    <button class="btn-primary" onclick="enterSite()">I am 21 or older</button>
+    <button class="age-no" onclick="document.body.innerHTML='<div style=\'text-align:center;padding:100px;font-family:sans-serif;color:#888\'>You must be 21+ to enter this site.</div>'">I am under 21</button>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  🌴 Grand Opening — Costambar Bar & Liquor &nbsp;|&nbsp; 292 Market St, Paterson NJ &nbsp;|&nbsp; (973) 225-0091
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-icon">🌴</span>
+    <div>
+      <div class="nav-logo-text">Costambar</div>
+      <span class="nav-logo-sub">Bar & Liquor</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#hours">Hours</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:9732250091" class="nav-cta">Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="26cdd044-dd29-4dcf-9ded-861cd4adee93-1_all_15397.jpg" alt="Costambar Bar & Liquor exterior" class="hero-photo">
+  <div class="hero-img-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Now Open in Paterson, NJ</div>
+    <div class="hero-title">Costambar</div>
+    <div class="hero-title-sub">Bar & Liquor</div>
+    <p class="hero-desc">Your neighborhood bar and liquor store in the heart of Paterson. Curated selection of spirits, wines, beers, and cocktails — with the warm Dominican hospitality the Costambar family is known for.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">Browse Products</a>
+      <a href="#contact" class="btn-outline">Find Us</a>
+    </div>
+  </div>
+  <div class="hero-address">
+    <div>📍 <span>292 Market St</span>, Paterson NJ 07501</div>
+    <div>📞 <span>(973) 225-0091</span></div>
+    <div>🕐 Open <span>Mon–Sun</span></div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ABOUT -->
+<section class="about-strip" id="about">
+  <div class="about-photos">
+    <img src="1000198332_heic.webp" alt="Grand Opening Costambar Bar & Liquor">
+    <img src="1000198333_heic.webp" alt="Costambar Bar & Liquor interior">
+    <img src="1000198334_heic.webp" alt="Costambar Bar & Liquor beer cooler">
+  </div>
+  <div class="about-text">
+    <div class="section-eyebrow">Our Story</div>
+    <h2>More Than a Bar —<br><em>A Family Tradition</em></h2>
+    <p>Costambar Bar & Liquor is the newest venture from the family behind <strong style="color:var(--gold)">Parrillada Costambar Restaurant</strong> — Paterson's beloved Dominican restaurant known for authentic cuisine and warm hospitality since day one.</p>
+    <p>We bring that same passion and community spirit to your neighborhood bar and liquor store. Whether you're grabbing a cold six-pack, a premium bottle, or sitting down for a shot with friends, you're always welcome here.</p>
+    <p>Hand-selected wines, spirits, beers and cocktails — all in a clean, modern space designed for the Paterson community.</p>
+    <div class="family-badge">
+      🌴 Sister location of Parrillada Costambar Restaurant &nbsp;|&nbsp; 298 Market St
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="feature-item">
+    <span class="feature-icon">🥃</span>
+    <h3>Premium Spirits</h3>
+    <p>Whiskeys, tequilas, cognacs & more — hand-selected from the world's best distilleries.</p>
+  </div>
+  <div class="feature-item">
+    <span class="feature-icon">🍷</span>
+    <h3>Wines & Champagne</h3>
+    <p>An extensive selection of red, white, rosé, and sparkling wines at every price point.</p>
+  </div>
+  <div class="feature-item">
+    <span class="feature-icon">🍺</span>
+    <h3>Cold Beer Selection</h3>
+    <p>Domestic, imported & craft beers — always cold and ready in our walk-in coolers.</p>
+  </div>
+  <div class="feature-item">
+    <span class="feature-icon">🍹</span>
+    <h3>Bar & Shots</h3>
+    <p>Enjoy your favorite shot or cocktail right here — Hennessy, Buchanan's, Don Julio & more.</p>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="section-header">
+    <div class="eyebrow">Inside the Store</div>
+    <h2>A Look Around Costambar</h2>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+    <img src="1000198332_heic.webp" alt="Grand Opening" onclick="openLightbox(this.src)">
+    <img src="1000209160_heic.webp" alt="Wine selection" onclick="openLightbox(this.src)">
+    <img src="1000209159_heic.webp" alt="Wine shelf" onclick="openLightbox(this.src)">
+    <img src="1000198333_heic.webp" alt="Bar counter" onclick="openLightbox(this.src)">
+    <img src="1000198334_heic.webp" alt="Beer coolers" onclick="openLightbox(this.src)">
+    <img src="1000207432_heic.webp" alt="Interior" onclick="openLightbox(this.src)">
+    <img src="1000198335_heic.webp" alt="Beer cooler full" onclick="openLightbox(this.src)">
+    <img src="1000207436_heic.webp" alt="Sutter Home wines" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img src="" id="lightboxImg" alt="">
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="section-header">
+    <div class="eyebrow">What We Carry</div>
+    <h2>Our Product Selection</h2>
+  </div>
+
+  <div class="category-tabs">
+    <button class="tab-btn active" onclick="filterProducts('all', this)">All</button>
+    <button class="tab-btn" onclick="filterProducts('bar', this)">Bar Shots</button>
+    <button class="tab-btn" onclick="filterProducts('whiskey', this)">Whiskey</button>
+    <button class="tab-btn" onclick="filterProducts('tequila', this)">Tequila</button>
+    <button class="tab-btn" onclick="filterProducts('cognac', this)">Cognac</button>
+    <button class="tab-btn" onclick="filterProducts('rum', this)">Rum</button>
+    <button class="tab-btn" onclick="filterProducts('vodka', this)">Vodka</button>
+    <button class="tab-btn" onclick="filterProducts('wine', this)">Wine</button>
+    <button class="tab-btn" onclick="filterProducts('beer', this)">Beer</button>
+    <button class="tab-btn" onclick="filterProducts('rtd', this)">RTD / Cocktails</button>
+    <button class="tab-btn" onclick="filterProducts('other', this)">More</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<!-- HOURS & CONTACT -->
+<section class="info-section" id="hours">
+  <div class="info-panel">
+    <div class="eyebrow">When To Visit</div>
+    <h2>Store Hours</h2>
+    <ul class="hours-list">
+      <li class="today"><span class="day">Monday</span><span class="time">10:00 AM – 10:00 PM</span></li>
+      <li><span class="day">Tuesday</span><span class="time">10:00 AM – 10:00 PM</span></li>
+      <li><span class="day">Wednesday</span><span class="time">10:00 AM – 10:00 PM</span></li>
+      <li><span class="day">Thursday</span><span class="time">10:00 AM – 10:00 PM</span></li>
+      <li><span class="day">Friday</span><span class="time">10:00 AM – 11:00 PM</span></li>
+      <li><span class="day">Saturday</span><span class="time">10:00 AM – 11:00 PM</span></li>
+      <li><span class="day">Sunday</span><span class="time">12:00 PM – 9:00 PM</span></li>
+    </ul>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:20px;">Hours may vary on holidays. Call ahead to confirm.</p>
+  </div>
+  <div class="info-panel" id="contact">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Contact Us</h2>
+    <ul class="contact-list">
+      <li>
+        <span class="contact-icon">📍</span>
+        <div>
+          <div class="contact-label">Address</div>
+          <a href="https://maps.google.com/?q=292+Market+St+Paterson+NJ" target="_blank" class="contact-value">292 Market St, Paterson, NJ 07501</a>
+        </div>
+      </li>
+      <li>
+        <span class="contact-icon">📞</span>
+        <div>
+          <div class="contact-label">Phone</div>
+          <a href="tel:9732250091" class="contact-value">(973) 225-0091</a>
+        </div>
+      </li>
+      <li>
+        <span class="contact-icon">📞</span>
+        <div>
+          <div class="contact-label">Phone 2</div>
+          <a href="tel:9732250096" class="contact-value">(973) 225-0096</a>
+        </div>
+      </li>
+      <li>
+        <span class="contact-icon">🌐</span>
+        <div>
+          <div class="contact-label">Sister Restaurant</div>
+          <a href="https://parrilladacostambar.com" target="_blank" class="contact-value">parrilladacostambar.com</a>
+        </div>
+      </li>
+    </ul>
+    <div class="social-row">
+      <a href="#" class="social-btn" title="Facebook">f</a>
+      <a href="https://www.instagram.com/costambarliquor?igsh=MTNqZHNwNnAzNnR4" target="_blank" class="social-btn" title="Instagram @costambarliquor">📸</a>
+      <a href="https://api.whatsapp.com/send?phone=9732250091" class="social-btn" title="WhatsApp">💬</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-section">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.4!2d-74.1660!3d40.9149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fc341093d72d%3A0xf51b49a13585649d!2s298%20Market%20St%2C%20Paterson%2C%20NJ%2007501!5e0!3m2!1sen!2sus!4v1699000000000!5m2!1sen!2sus"
+    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  <div class="map-overlay-card">
+    <h3>Costambar Bar & Liquor</h3>
+    <p>292 Market St<br>Paterson, NJ 07501<br>Corner of Market & Roberto Clemente</p>
+    <a href="https://maps.google.com/?q=292+Market+St+Paterson+NJ" target="_blank" class="btn-primary" style="font-size:11px;padding:10px 18px;">Get Directions</a>
+  </div>
+</div>
+
+<!-- INSTAGRAM SECTION -->
+<section class="instagram-section">
+  <div class="instagram-left">
+    <div class="ig-eyebrow">Follow Us</div>
+    <h2 class="ig-title">We're on <span>Instagram</span></h2>
+    <p class="ig-desc">Stay up to date with new arrivals, promotions, events and behind-the-scenes at Costambar Bar & Liquor.</p>
+    <a href="https://www.instagram.com/costambarliquor?igsh=MTNqZHNwNnAzNnR4" target="_blank" class="ig-handle-btn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+      </svg>
+      @costambarliquor
+    </a>
+    <p class="ig-scan">Or scan the QR code to follow us instantly</p>
+  </div>
+  <div class="instagram-right">
+    <div class="qr-card">
+      <div class="qr-label">Scan to Follow</div>
+      <div class="qr-wrapper">
+        <canvas id="qrCanvas"></canvas>
+      </div>
+      <div class="qr-handle">@costambarliquor</div>
+      <a href="https://www.instagram.com/costambarliquor?igsh=MTNqZHNwNnAzNnR4" target="_blank" class="qr-link">instagram.com/costambarliquor</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.instagram-section {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0f1f 50%, #0a0a0a 100%);
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  padding: 80px 80px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 80px;
+  align-items: center;
+}
+
+.ig-eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.ig-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.ig-title span {
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ig-desc {
+  font-size: 15px;
+  color: rgba(245,240,232,0.65);
+  line-height: 1.8;
+  max-width: 420px;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.ig-handle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+}
+
+.ig-handle-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(220,39,67,0.35);
+}
+
+.ig-scan {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.qr-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 28px 22px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.2);
+  min-width: 220px;
+}
+
+.qr-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.qr-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.qr-wrapper canvas {
+  border-radius: 8px;
+}
+
+.qr-handle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  color: #bc1888;
+  margin-bottom: 6px;
+}
+
+.qr-link {
+  font-size: 10px;
+  color: #aaa;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 900px) {
+  .instagram-section {
+    grid-template-columns: 1fr;
+    padding: 60px 30px;
+    gap: 40px;
+    text-align: center;
+  }
+  .ig-desc { margin: 0 auto 32px; }
+  .ig-handle-btn { margin: 0 auto 20px; }
+  .qr-card { margin: 0 auto; }
+  .ig-scan { margin-top: 10px; }
+}
+</style>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="logo-name">Costambar</div>
+    <div class="logo-sub">Bar & Liquor · Paterson, NJ</div>
+    <p>Part of the Costambar family — bringing authentic Dominican hospitality and a premium selection of spirits to the Paterson community.</p>
+    <div class="family-badge" style="font-size:11px">🌴 Sister of Parrillada Costambar Restaurant</div>
+  </div>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#hours">Store Hours</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Categories</h4>
+    <ul>
+      <li><a href="#products">Whiskey & Scotch</a></li>
+      <li><a href="#products">Tequila</a></li>
+      <li><a href="#products">Cognac & Brandy</a></li>
+      <li><a href="#products">Wine</a></li>
+      <li><a href="#products">Beer & Malt</a></li>
+      <li><a href="#products">RTD Cocktails</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <div>© 2025 Costambar Bar & Liquor. All Rights Reserved. &nbsp;|&nbsp; Must be 21+ to purchase alcohol.</div>
+  <div>⚠️ Please drink responsibly. &nbsp;|&nbsp; <a href="https://parrilladacostambar.com" target="_blank">Visit our Restaurant →</a></div>
+</div>
+
+<script>
+// Age gate
+function enterSite() {
+  document.getElementById('ageGate').classList.remove('visible');
+}
+
+// Lightbox
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+// Products data
+const products = [
+  // BAR
+  {name:"Black Label Shot", cat:"bar", price:"$8", catLabel:"Bar"},
+  {name:"Black Label Trago", cat:"bar", price:"$12", catLabel:"Bar"},
+  {name:"Buchanan's 12Y Shot", cat:"bar", price:"$8", catLabel:"Bar"},
+  {name:"Buchanan's 12Y Trago", cat:"bar", price:"$12", catLabel:"Bar"},
+  {name:"Buchanan's Master Shot", cat:"bar", price:"$10", catLabel:"Bar"},
+  {name:"Buchanan's Master Trago", cat:"bar", price:"$15", catLabel:"Bar"},
+  {name:"Buchanan's Pineapple Shot", cat:"bar", price:"$8", catLabel:"Bar"},
+  {name:"Casamigos Blanco Shot", cat:"bar", price:"$8", catLabel:"Bar"},
+  {name:"Don Julio Reposado Shot", cat:"bar", price:"$10", catLabel:"Bar"},
+  {name:"Hennessy VS Shot", cat:"bar", price:"$8", catLabel:"Bar"},
+  {name:"Hennessy VS Trago", cat:"bar", price:"$12", catLabel:"Bar"},
+  {name:"Hennessy VSOP Shot", cat:"bar", price:"$10", catLabel:"Bar"},
+  {name:"Hennessy VSOP Trago", cat:"bar", price:"$15", catLabel:"Bar"},
+  {name:"Old Parr 12Y Shot", cat:"bar", price:"$8", catLabel:"Bar"},
+  {name:"Old Parr 18Y Shot", cat:"bar", price:"$12", catLabel:"Bar"},
+  {name:"Patrón Silver Shot", cat:"bar", price:"$8", catLabel:"Bar"},
+  {name:"Remy Martin VSOP Shot", cat:"bar", price:"$10", catLabel:"Bar"},
+  {name:"Tito's Vodka Shot", cat:"bar", price:"$6", catLabel:"Bar"},
+  // WHISKEY
+  {name:"Buchanan's 12Y 750ml", cat:"whiskey", price:"$39", catLabel:"Whiskey"},
+  {name:"Buchanan's 12Y 1.75L", cat:"whiskey", price:"$78", catLabel:"Whiskey"},
+  {name:"Buchanan's Master 750ml", cat:"whiskey", price:"$55", catLabel:"Whiskey"},
+  {name:"Buchanan's Pineapple 750ml", cat:"whiskey", price:"$46", catLabel:"Whiskey"},
+  {name:"Johnnie Walker Black 750ml", cat:"whiskey", price:"$39", catLabel:"Whiskey"},
+  {name:"Johnnie Walker Black 1.75L", cat:"whiskey", price:"$79", catLabel:"Whiskey"},
+  {name:"Johnnie Walker Blue 750ml", cat:"whiskey", price:"$230", catLabel:"Whiskey"},
+  {name:"Johnnie Walker Gold 750ml", cat:"whiskey", price:"$69", catLabel:"Whiskey"},
+  {name:"Johnnie Walker Double Black 750ml", cat:"whiskey", price:"$49", catLabel:"Whiskey"},
+  {name:"Johnnie Walker 18Y 750ml", cat:"whiskey", price:"$85", catLabel:"Whiskey"},
+  {name:"Jack Daniels Black 750ml", cat:"whiskey", price:"$37", catLabel:"Whiskey"},
+  {name:"Jack Daniels Tennessee Honey 750ml", cat:"whiskey", price:"$37", catLabel:"Whiskey"},
+  {name:"Jameson Irish 200ml", cat:"whiskey", price:"$13", catLabel:"Whiskey"},
+  {name:"Chivas Regal 12Y 750ml", cat:"whiskey", price:"$43", catLabel:"Whiskey"},
+  {name:"Chivas Regal 18Y 750ml", cat:"whiskey", price:"$109", catLabel:"Whiskey"},
+  {name:"Old Parr 80 750ml", cat:"whiskey", price:"$39", catLabel:"Whiskey"},
+  {name:"Old Parr 18Y 750ml", cat:"whiskey", price:"$74", catLabel:"Whiskey"},
+  {name:"Fireball 750ml", cat:"whiskey", price:"$14", catLabel:"Whiskey"},
+  // TEQUILA
+  {name:"Don Julio 1942 750ml", cat:"tequila", price:"$190", catLabel:"Tequila"},
+  {name:"Don Julio Reposado 750ml", cat:"tequila", price:"$65", catLabel:"Tequila"},
+  {name:"Don Julio Blanco 750ml", cat:"tequila", price:"$59", catLabel:"Tequila"},
+  {name:"Don Julio Cristalino 750ml", cat:"tequila", price:"$78", catLabel:"Tequila"},
+  {name:"Casamigos Blanco 750ml", cat:"tequila", price:"$58", catLabel:"Tequila"},
+  {name:"Casamigos Reposado 750ml", cat:"tequila", price:"$65", catLabel:"Tequila"},
+  {name:"Patrón Silver 750ml", cat:"tequila", price:"$59", catLabel:"Tequila"},
+  {name:"Patrón Reposado 750ml", cat:"tequila", price:"$59", catLabel:"Tequila"},
+  {name:"Clase Azul Plata 750ml", cat:"tequila", price:"$160", catLabel:"Tequila"},
+  {name:"Clase Azul Reposado 750ml", cat:"tequila", price:"$190", catLabel:"Tequila"},
+  {name:"1800 Blanco 750ml", cat:"tequila", price:"$39", catLabel:"Tequila"},
+  {name:"1800 Reposado 750ml", cat:"tequila", price:"$39", catLabel:"Tequila"},
+  {name:"Milagro Silver 750ml", cat:"tequila", price:"$39", catLabel:"Tequila"},
+  {name:"Jose Cuervo Gold 750ml", cat:"tequila", price:"$28", catLabel:"Tequila"},
+  {name:"Lunazul Reposado 750ml", cat:"tequila", price:"$32", catLabel:"Tequila"},
+  {name:"Teremana Blanco 375ml", cat:"tequila", price:"$20", catLabel:"Tequila"},
+  // COGNAC
+  {name:"Hennessy VS 750ml", cat:"cognac", price:"$52", catLabel:"Cognac"},
+  {name:"Hennessy VS 1.75L", cat:"cognac", price:"$96", catLabel:"Cognac"},
+  {name:"Hennessy VSOP 750ml", cat:"cognac", price:"$65", catLabel:"Cognac"},
+  {name:"Remy Martin 1738 750ml", cat:"cognac", price:"$73", catLabel:"Cognac"},
+  {name:"Remy Martin VSOP 750ml", cat:"cognac", price:"$62", catLabel:"Cognac"},
+  {name:"D'Ussé VSOP 750ml", cat:"cognac", price:"$57", catLabel:"Cognac"},
+  {name:"Pierre Patou 750ml", cat:"cognac", price:"$30", catLabel:"Cognac"},
+  // RUM
+  {name:"Bacardi Superior 750ml", cat:"rum", price:"$18", catLabel:"Rum"},
+  {name:"Bacardi Gold 750ml", cat:"rum", price:"$18", catLabel:"Rum"},
+  {name:"Brugal Añejo 750ml", cat:"rum", price:"$29", catLabel:"Rum"},
+  {name:"Brugal 1888 750ml", cat:"rum", price:"$49", catLabel:"Rum"},
+  {name:"Brugal Extra Viejo 750ml", cat:"rum", price:"$32", catLabel:"Rum"},
+  {name:"Barceló Blanco 750ml", cat:"rum", price:"$18", catLabel:"Rum"},
+  {name:"Barceló Dorado 750ml", cat:"rum", price:"$18", catLabel:"Rum"},
+  {name:"Ron Barceló Añejo 750ml", cat:"rum", price:"$22", catLabel:"Rum"},
+  {name:"La Fuerza 750ml", cat:"rum", price:"$8", catLabel:"Rum"},
+  {name:"La Fuerza 1.5L", cat:"rum", price:"$16", catLabel:"Rum"},
+  {name:"Ozama Añejo 700ml", cat:"rum", price:"$32", catLabel:"Rum"},
+  {name:"Ozama Gran Añejo 700ml", cat:"rum", price:"$49", catLabel:"Rum"},
+  {name:"Macorix Coconut 700ml", cat:"rum", price:"$18", catLabel:"Rum"},
+  {name:"Palo Viejo White 750ml", cat:"rum", price:"$13", catLabel:"Rum"},
+  {name:"Puntacana Club XOX 700ml", cat:"rum", price:"$65", catLabel:"Rum"},
+  {name:"J&J Ripiao 700ml", cat:"rum", price:"$24", catLabel:"Rum"},
+  // VODKA
+  {name:"Tito's Handmade 750ml", cat:"vodka", price:"$26", catLabel:"Vodka"},
+  {name:"Tito's Handmade 1.75L", cat:"vodka", price:"$43", catLabel:"Vodka"},
+  {name:"Grey Goose 750ml", cat:"vodka", price:"$35", catLabel:"Vodka"},
+  {name:"Smirnoff 80 750ml", cat:"vodka", price:"$22", catLabel:"Vodka"},
+  {name:"Absolut Vodka 1L", cat:"vodka", price:"$30", catLabel:"Vodka"},
+  {name:"Ciroc Coconut 50ml", cat:"vodka", price:"$2", catLabel:"Vodka"},
+  {name:"Ciroc Mango 50ml", cat:"vodka", price:"$2", catLabel:"Vodka"},
+  {name:"New Amsterdam Apple 50ml", cat:"vodka", price:"$1.25", catLabel:"Vodka"},
+  {name:"Majorska 750ml", cat:"vodka", price:"$10", catLabel:"Vodka"},
+  // WINE
+  {name:"Dom Pérignon 750ml", cat:"wine", price:"$295", catLabel:"Wine"},
+  {name:"Veuve Clicquot Yellow Label 750ml", cat:"wine", price:"$75", catLabel:"Wine"},
+  {name:"Moët Brut Imperial 750ml", cat:"wine", price:"$63", catLabel:"Wine"},
+  {name:"Papi Moscato 750ml", cat:"wine", price:"$9", catLabel:"Wine"},
+  {name:"Papi Pink Moscato 750ml", cat:"wine", price:"$9", catLabel:"Wine"},
+  {name:"Papi Blueberry 750ml", cat:"wine", price:"$9", catLabel:"Wine"},
+  {name:"Papi Mango 750ml", cat:"wine", price:"$9", catLabel:"Wine"},
+  {name:"Papi Demi Sec Cabernet 750ml", cat:"wine", price:"$9", catLabel:"Wine"},
+  {name:"Sutter Home Moscato 750ml", cat:"wine", price:"$9.50", catLabel:"Wine"},
+  {name:"Sutter Home White Zinfandel 750ml", cat:"wine", price:"$9.50", catLabel:"Wine"},
+  {name:"19 Crimes Cabernet 750ml", cat:"wine", price:"$13", catLabel:"Wine"},
+  {name:"Roscato Rosso Dolce 750ml", cat:"wine", price:"$16", catLabel:"Wine"},
+  {name:"Menage a Trois CS 3pk", cat:"wine", price:"$33", catLabel:"Wine"},
+  {name:"Frontera Cabernet 750ml", cat:"wine", price:"$7", catLabel:"Wine"},
+  {name:"Carlo Rossi Sangria 1.5L", cat:"wine", price:"$12", catLabel:"Wine"},
+  {name:"Korbel Brut 750ml", cat:"wine", price:"$19", catLabel:"Champagne"},
+  {name:"Riunite Lambrusco 750ml", cat:"wine", price:"$10", catLabel:"Wine"},
+  {name:"Josh Cabernet 750ml", cat:"wine", price:"$21", catLabel:"Wine"},
+  {name:"La Fuerza Red Wine 750ml", cat:"wine", price:"$9", catLabel:"Wine"},
+  // BEER
+  {name:"Corona Extra 12oz Bottle", cat:"beer", price:"$2", catLabel:"Beer"},
+  {name:"Corona Extra 24oz Bottle", cat:"beer", price:"$3.75", catLabel:"Beer"},
+  {name:"Corona Familiar 32oz", cat:"beer", price:"$5", catLabel:"Beer"},
+  {name:"Modelo Especial 12oz Bottle", cat:"beer", price:"$2", catLabel:"Beer"},
+  {name:"Modelo Especial 24oz Can", cat:"beer", price:"$3.75", catLabel:"Beer"},
+  {name:"Modelo Chelada 24oz Can", cat:"beer", price:"$4", catLabel:"Beer"},
+  {name:"Heineken 12oz Bottle", cat:"beer", price:"$2", catLabel:"Beer"},
+  {name:"Heineken 24oz Can", cat:"beer", price:"$4", catLabel:"Beer"},
+  {name:"Stella Artois 12oz Bottle", cat:"beer", price:"$2", catLabel:"Beer"},
+  {name:"Coors Light 24oz Can", cat:"beer", price:"$2", catLabel:"Beer"},
+  {name:"Bud Light 25oz Can", cat:"beer", price:"$2", catLabel:"Beer"},
+  {name:"Guinness Extra 11.2oz", cat:"beer", price:"$2.50", catLabel:"Beer"},
+  {name:"Peroni 12oz", cat:"beer", price:"$4", catLabel:"Beer"},
+  {name:"Samuel Adams 12oz", cat:"beer", price:"$2", catLabel:"Beer"},
+  {name:"Blue Moon 12oz Bottle", cat:"beer", price:"$3", catLabel:"Beer"},
+  {name:"Presidente 12oz", cat:"beer", price:"$2", catLabel:"Beer"},
+  {name:"Dogfish 90min IPA 12oz", cat:"beer", price:"$5", catLabel:"Beer"},
+  {name:"Sapporo Can 22oz", cat:"beer", price:"$4", catLabel:"Beer"},
+  // RTD
+  {name:"High Noon Peach 355ml Pack", cat:"rtd", price:"$13.50", catLabel:"RTD"},
+  {name:"High Noon Watermelon 355ml Pack", cat:"rtd", price:"$13.50", catLabel:"RTD"},
+  {name:"High Noon Pineapple 355ml Pack", cat:"rtd", price:"$13.50", catLabel:"RTD"},
+  {name:"White Claw Mango", cat:"rtd", price:"$12.50", catLabel:"RTD"},
+  {name:"White Claw Black Cherry", cat:"rtd", price:"$12.50", catLabel:"RTD"},
+  {name:"White Claw Natural Lime", cat:"rtd", price:"$12.50", catLabel:"RTD"},
+  {name:"Jose Cuervo Margarita 1.75L", cat:"rtd", price:"$27", catLabel:"RTD"},
+  {name:"Cutwater Lime Margarita Can", cat:"rtd", price:"$4", catLabel:"RTD"},
+  {name:"Cutwater Long Island Iced Tea", cat:"rtd", price:"$4", catLabel:"RTD"},
+  {name:"Buzzballz Strawberry Rita", cat:"rtd", price:"$3.50", catLabel:"RTD"},
+  {name:"Dre & Snoop Iced Tea 355ml", cat:"rtd", price:"$2.50", catLabel:"RTD"},
+  {name:"Beatbox Fruit Punch 500ml", cat:"rtd", price:"$3.50", catLabel:"RTD"},
+  {name:"Smirnoff Ice 11.2oz", cat:"rtd", price:"$2.25", catLabel:"Malt Bev"},
+  // OTHER
+  {name:"E&J VS Brandy 750ml", cat:"other", price:"$14", catLabel:"Brandy"},
+  {name:"E&J VSOP Brandy 750ml", cat:"other", price:"$15.50", catLabel:"Brandy"},
+  {name:"Alize Gold 750ml", cat:"other", price:"$33", catLabel:"Liqueur"},
+  {name:"Baileys Irish Cream 750ml", cat:"other", price:"$38", catLabel:"Liqueur"},
+  {name:"Kahlua Coffee 1L", cat:"other", price:"$44", catLabel:"Liqueur"},
+  {name:"Aguardiente Sin Azucar 750ml", cat:"other", price:"$25", catLabel:"Aguardiente"},
+  {name:"Desquite Aguardiente 750ml", cat:"other", price:"$29", catLabel:"Aguardiente"},
+  {name:"Dre & Snoop Still Gin 750ml", cat:"other", price:"$33", catLabel:"Gin"},
+  {name:"Red Bull 8.4oz", cat:"other", price:"$3", catLabel:"Mixer"},
+  {name:"Tres Agaves Margarita 750ml", cat:"other", price:"$10", catLabel:"Margarita"},
+];
+
+function renderProducts(filter) {
+  const grid = document.getElementById('productsGrid');
+  const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card">
+      <div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-cat">${p.catLabel}</div>
+      </div>
+      <div class="product-price">${p.price}</div>
+    </div>
+  `).join('');
+}
+
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(cat);
+}
+
+renderProducts('all');
+
+// QR Code Generator (pure canvas, no library needed)
+function generateQR() {
+  const canvas = document.getElementById('qrCanvas');
+  if (!canvas) return;
+  const url = 'https://www.instagram.com/costambarliquor';
+  const size = 180;
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+
+  // Use a QR API via img tag approach since we can't run qrcode lib in this context
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = function() {
+    ctx.drawImage(img, 0, 0, size, size);
+    // Add Instagram gradient border overlay
+    const gradient = ctx.createLinearGradient(0, 0, size, size);
+    gradient.addColorStop(0, 'rgba(240,148,51,0)');
+    gradient.addColorStop(1, 'rgba(188,24,136,0)');
+  };
+  img.onerror = function() {
+    // Fallback: draw placeholder
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0,0,size,size);
+    ctx.fillStyle = '#000';
+    ctx.font = 'bold 11px Montserrat, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('@costambarliquor', size/2, size/2 - 6);
+    ctx.font = '9px Montserrat, sans-serif';
+    ctx.fillStyle = '#888';
+    ctx.fillText('instagram.com', size/2, size/2 + 10);
+  };
+  img.src = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(url)}&bgcolor=ffffff&color=000000&margin=10&ecc=M`;
+}
+
+generateQR();
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.feature-item, .about-photos img, .gallery-grid img').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
